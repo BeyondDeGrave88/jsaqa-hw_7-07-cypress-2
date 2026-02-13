@@ -1,0 +1,27 @@
+{
+  "mainPage": {
+    "days": ".page-nav__day",
+    "title": ".page-header__title",
+    "expectedTitleText": "Идёмвкино",
+    "expectedDaysCount": 7,
+    "nextDay":"a:nth-child(2)"
+  },
+  "loginPage": {
+    "emailInput": ".login__input[type=\"email\"]",
+    "passwordInput": ".login__input[type=\"password\"]",
+    "submitButton": "Авторизоваться",
+    "errorMessage": "Ошибка авторизации!"
+  },
+  "adminPage": {
+    "hallControl": "section[id=\"hall-control\"]",
+    "filmId": "[data-film-id=\"128\"]",
+    "filmTitle": ".conf-step__movie-title"
+  },
+  "bookingPage": {
+    "sessionTime": "a.movie-seances__time",
+    "seat": ".buying-scheme__row:nth-child({row}) .buying-scheme__chair:nth-child({seat})",
+    "acceptButton": ".acceptin-button",
+    "bookingTitle": ".ticket__check-title",
+    "bookingFilmTitle": ".ticket__info"
+  }
+}
