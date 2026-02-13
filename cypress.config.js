@@ -1,6 +1,7 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
+  projectId: 'cjosdh',
   //retries: 2,
   e2e: {
     baseUrl: 'http://qamid.tmweb.ru',
