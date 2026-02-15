@@ -15,9 +15,23 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "cy:adminLogin": "cypress run --group adminLogin --ci-build-id 2 --spec cypress/e2e/adminLogin.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
-    "cy:mainPage": "cypress run --group mainPage --ci-build-id 2 --spec cypress/e2e/mainPage.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
-    "cy:seatsBooking": "cypress run --group seatsBooking --ci-build-id 2 --spec cypress/e2e/seatsBooking.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    "cy:adminLogin": "cypress run --group adminLogin --spec cypress/e2e/admin/adminLogin.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    "cy:mainPage": "cypress run --group mainPage --spec cypress/e2e/main/mainPage.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    "cy:seatsBooking": "cypress run --group seatsBooking --spec cypress/e2e/main/seatsBooking.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+
+    "cy:adminLogin:chrome": "cypress run --group adminLogin-chrome --browser chrome --spec cypress/e2e/admin/adminLogin.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    "cy:adminLogin:firefox": "cypress run --group adminLogin-firefox --browser firefox --spec cypress/e2e/admin/adminLogin.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    
+    "cy:mainPage:chrome": "cypress run --group mainPage-chrome --browser chrome --spec cypress/e2e/main/mainPage.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    "cy:mainPage:firefox": "cypress run --group mainPage-firefox --browser firefox --spec cypress/e2e/main/mainPage.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    
+    "cy:seatsBooking:chrome": "cypress run --group seatsBooking-chrome --browser chrome --spec cypress/e2e/main/seatsBooking.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    "cy:seatsBooking:firefox": "cypress run --group seatsBooking-firefox --browser firefox --spec cypress/e2e/main/seatsBooking.cy.js --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
+    
+    "cy:admin:parallel": "npm run cy:adminLogin:chrome -- --parallel & npm run cy:adminLogin:firefox -- --parallel",
+    "cy:main:parallel": "npm run cy:mainPage:chrome -- --parallel & npm run cy:mainPage:firefox -- --parallel & npm run cy:seatsBooking:chrome -- --parallel & npm run cy:seatsBooking:firefox -- --parallel",
+    "cy:all:parallel": "npm run cy:admin:parallel & npm run cy:main:parallel",
+    
     "test": "npx cypress run --record --key 32ca8dbc-1691-4ce7-bd5f-07f680c0490b",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
